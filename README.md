@@ -24,7 +24,15 @@ Follow these steps to get the project running on your local machine:
    ```
    > If you're using npm instead of pnpm, replace `pnpm` with `npm` in all commands
 
-3. **Start the development server**
+3. **Install Tailwind dependencies**
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   ```
+    ```bash
+   npx tailwindcss init -p
+   ```
+
+4. **Start the development server**
    ```bash
    pnpm dev
    ```
