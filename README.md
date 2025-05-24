@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# RocketStore 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern e-commerce store built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, ensure you have the following installed on your system:
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- [pnpm](https://pnpm.io/) (recommended) or npm
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to get the project running on your local machine:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd RocketStore
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+   > If you're using npm instead of pnpm, replace `pnpm` with `npm` in all commands
+
+3. **Start the development server**
+   ```bash
+   pnpm dev
+   ```
+   The application will start and be available at [http://localhost:5173](http://localhost:5173)
+
+## Project Structure
+
+```
+RocketStore/
+├── src/
+│   ├── components/     # React components
+│   ├── contexts/       # React contexts (e.g., CartContext)
+│   ├── assets/        # Static assets (images, icons)
+│   ├── pages/         # Page components
+│   └── products.ts    # Product data
+├── public/            # Public assets
+└── package.json       # Project dependencies and scripts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technologies Used
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Router DOM
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
