@@ -1,7 +1,7 @@
 import { useCart } from "../contexts/CartContext";
 import { useState, useEffect } from "react";
 import PurchaseCard from "./PurchaseCard";
-import iconBag from "../assets/shopping-bag.png";
+import iconBag from "../assets/bag.png";
 import { createPortal } from 'react-dom';
 
 function CartTab() {

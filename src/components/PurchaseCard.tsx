@@ -32,7 +32,7 @@ function PurchaseCard({ onClose, items = [] }: PurchaseCardProps) {
       
       {/* Modal */}
       <div className="fixed inset-x-4 top-1/2 -translate-y-1/2 md:inset-auto md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg z-50">
-        <div className="relative bg-white rounded-lg shadow-xl">
+        <div className="relative bg-white rounded-lg shadow-xl max-h-[90vh] flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b">
             <h2 className="text-xl font-semibold text-gray-900">Checkout</h2>
@@ -48,15 +48,15 @@ function PurchaseCard({ onClose, items = [] }: PurchaseCardProps) {
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-4 overflow-y-auto flex-1">
             {items.length === 0 ? (
               <p className="text-center text-gray-500">Your cart is empty</p>
             ) : (
               <div className="space-y-4">
                 {/* Items list */}
-                <div className="space-y-2">
+                <div className="space-y-4">
                   {items.map((item) => (
-                    <div key={item.id} className="flex items-center space-x-4">
+                    <div key={item.id} className="flex items-center space-x-4 border-b pb-4">
                       <img 
                         src={item.imageSrc} 
                         alt={item.text} 
@@ -65,10 +65,10 @@ function PurchaseCard({ onClose, items = [] }: PurchaseCardProps) {
                       <div className="flex-1">
                         <p className="font-medium text-gray-900">{item.text}</p>
                         <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                        <p className="font-medium text-gray-900 mt-1">
+                          ${(item.price * item.quantity).toFixed(2)}
+                        </p>
                       </div>
-                      <p className="font-medium text-gray-900">
-                        ${(item.price * item.quantity).toFixed(2)}
-                      </p>
                     </div>
                   ))}
                 </div>
@@ -87,7 +87,7 @@ function PurchaseCard({ onClose, items = [] }: PurchaseCardProps) {
           </div>
 
           {/* Footer */}
-          <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 px-6 py-4 bg-gray-50 rounded-b-lg">
+          <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 px-6 py-4 bg-gray-50 rounded-b-lg border-t">
             <button
               onClick={onClose}
               className="w-full sm:w-auto px-4 py-2 text-sm font-medium text-white bg-[#B85454] border border-gray-300 rounded-md shadow-sm hover:bg-[#B85454]/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -96,7 +96,6 @@ function PurchaseCard({ onClose, items = [] }: PurchaseCardProps) {
             </button>
             <button
               onClick={handleCheckout}
-              
               className="w-full sm:w-auto px-4 py-2 text-sm font-medium text-white bg-[#6E8890] border border-transparent rounded-md shadow-sm hover:bg-[#6E8890]/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Proceed to Payment

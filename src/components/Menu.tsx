@@ -14,6 +14,7 @@ function Menu() {
                         text={product.name} 
                         price={product.price} 
                         imageSrc={product.image}
+                        description={product.description}
                         slug={product.slug}
                     />
                 ))}
