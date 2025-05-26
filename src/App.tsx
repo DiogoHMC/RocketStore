@@ -1,12 +1,15 @@
 import './App.css'
 import { AppRoutes } from './Routes'
 import { CartProvider } from './contexts/CartContext'
+import { ProductProvider } from './contexts/ProductContext'
 
 function App() {
   return (
-    <CartProvider>
-      <AppRoutes />
-    </CartProvider>
+    <ProductProvider>
+      <CartProvider>
+        <AppRoutes />
+      </CartProvider>
+    </ProductProvider>
   )
 }
 

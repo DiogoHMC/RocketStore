@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import { useProducts } from './ProductContext';
 
 type CartItem = {
     id: number;
@@ -19,8 +20,25 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+const STORAGE_KEY = 'rocketstore_cart';
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
-    const [items, setItems] = useState<CartItem[]>([]);
+    const { products } = useProducts();
+    const [items, setItems] = useState<CartItem[]>(() => {
+        const storedCart = localStorage.getItem(STORAGE_KEY);
+        if (storedCart) {
+            const parsedCart = JSON.parse(storedCart);
+            // Validate stored cart items against current products
+            return parsedCart.filter((item: CartItem) => 
+                products.some(p => p.id === item.id)
+            );
+        }
+        return [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    }, [items]);
 
     const addToCart = (item: CartItem) => {
         setItems(currentItems => {

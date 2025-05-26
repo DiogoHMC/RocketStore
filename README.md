@@ -1,54 +1,129 @@
-# RocketStore 🚀
+# 🚀 RocketStore
 
-A modern e-commerce store built with React, TypeScript, and Tailwind CSS.
+A modern e-commerce web application built with React, TypeScript, and Tailwind CSS.
 
-## Prerequisites
+## Features
 
-Before you begin, ensure you have the following installed on your system:
-- [Node.js](https://nodejs.org/) (version 16 or higher)
-- [pnpm](https://pnpm.io/) (recommended) or npm
+### 🛍️ Shopping Experience
+- Browse through a curated collection of products
+- Responsive product grid layout
+- Product cards with images, descriptions, and prices
+- Dark mode support for comfortable viewing
 
-## Getting Started
+### 🛒 Cart Management
+- Add products to cart with real-time updates
+- Adjust product quantities in cart
+- Remove items from cart
+- Persistent cart state
+- Floating cart tab with total amount
+- Minimize/maximize cart view
 
-Follow these steps to get the project running on your local machine:
+### 💳 Checkout Process
+- Clean and intuitive checkout modal
+- Order summary with product details
+- Total calculation
+- Purchase confirmation
+- Clear cart functionality
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/DiogoHMC/RocketStore.git
-   cd RocketStore
-   ```
+### 🎨 UI/UX Features
+- Responsive design for all screen sizes
+- Dark/Light mode toggle
+- Smooth animations and transitions
+- Modern and clean interface
+- Consistent color scheme (#6E8890, #B85454)
 
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
-   > If you're using npm instead of pnpm, replace `pnpm` with `npm` in all commands
+## Technical Stack
 
-3. **Start the development server**
-   ```bash
-   pnpm dev
-   ```
-   The application will start and be available at [http://localhost:5173](http://localhost:5173)
-
-## Project Structure
-
-```
-RocketStore/
-├── src/
-│   ├── components/     # React components
-│   ├── contexts/       # React contexts (e.g., CartContext)
-│   ├── assets/        # Static assets (images, icons)
-│   ├── pages/         # Page components
-│   └── products.ts    # Product data
-├── public/            # Public assets
-└── package.json       # Project dependencies and scripts
-```
-
-## Technologies Used
-
+### Frontend
 - React
 - TypeScript
 - Tailwind CSS
-- Vite
-- React Router DOM
+- React Router for navigation
+- Context API for state management
+
+### Development Tools
+- Vite for fast development and building
+- ESLint for code quality
+- PostCSS for CSS processing
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+1. Clone the repository
+```bash
+git clone [repository-url]
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+### Building for Production
+```bash
+npm run build
+```
+
+## Project Structure
+```
+src/
+├── assets/         # Images and static assets
+├── components/     # React components
+│   ├── CartTab.tsx
+│   ├── Header.tsx
+│   ├── Layout.tsx
+│   ├── PurchaseCard.tsx
+│   └── ...
+├── contexts/      # React contexts
+│   └── CartContext.tsx
+├── App.tsx        # Main application component
+└── main.tsx      # Application entry point
+```
+
+## Features in Detail
+
+### Cart System
+- Real-time cart updates
+- Quantity adjustments
+- Total price calculation
+- Persistent cart state between sessions
+
+### Product Display
+- Grid layout for products
+- Product images with hover effects
+- Add to cart functionality
+- Price display
+
+### Checkout Process
+1. Cart review
+2. Order summary
+3. Purchase confirmation
+4. Cart clearing
+
+### Responsive Design
+- Mobile-first approach
+- Tablet and desktop optimizations
+- Adaptive layouts
+- Touch-friendly interfaces
+
+## Color Scheme
+- Primary: #6E8890 (Blue-gray)
+- Secondary: #B85454 (Red)
+- Background: White/Gray based on theme
+- Text: Contextual based on theme
+
+## Contributing
+Feel free to submit issues and enhancement requests.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
